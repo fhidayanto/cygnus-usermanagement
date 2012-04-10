@@ -6,6 +6,7 @@
 		<meta name="layout" content="cygnus-forms">
 		<g:set var="entityName" value="${message(code: 'requestMap.label', default: 'RequestMap')}" />
 		<title><g:message code="default.edit.label" args="[entityName]" /></title>
+		<parameter name="pageEName" value="requestMap" />
 	</head>
 	<body>
 		<a href="#edit-requestMap" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
@@ -28,7 +29,7 @@
 				</g:eachError>
 			</ul>
 			</g:hasErrors>
-			<g:formRemote name="cygnusrequestMapEditForm" update="pageContent" url="[controller:'requestMap', action:'save']" method="post" >
+			<g:formRemote name="cygnusrequestMapEditForm" update="pageContent" url="[controller:'requestMap', action:'update']" method="post" >
 				<g:hiddenField name="id" value="${requestMapInstance?.id}" />
 				<g:hiddenField name="version" value="${requestMapInstance?.version}" />
 				<fieldset class="form">

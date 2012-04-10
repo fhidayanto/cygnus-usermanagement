@@ -7,6 +7,7 @@
 		<meta name="layout" content="cygnus-forms">
 		<g:set var="entityName" value="${message(code: 'person.label', default: 'Person')}" />
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
+		<parameter name="pageEName" value="person" />
 	</head>
 	<body>
 		<a href="#list-person" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
@@ -62,10 +63,10 @@
 			
 			<div class="pagination">
 			<g:if test="${params.action == 'list' }">
-				<g:paginate total="personInstanceTotal}" />
+				<g:paginate total="{personInstanceTotal}" />
 			</g:if>
 			<g:else>
-				<g:paginate total="personInstanceTotal}"
+				<g:paginate total="{personInstanceTotal}"
 					action="cygnusFilteredSearch"
 					params="${params}"
 					max="${params.max}"/>
