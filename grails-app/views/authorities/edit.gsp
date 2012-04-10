@@ -6,6 +6,7 @@
 		<meta name="layout" content="cygnus-forms">
 		<g:set var="entityName" value="${message(code: 'authorities.label', default: 'Authorities')}" />
 		<title><g:message code="default.edit.label" args="[entityName]" /></title>
+		<parameter name="pageEName" value="authorities" />
 	</head>
 	<body>
 		<a href="#edit-authorities" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
@@ -28,7 +29,7 @@
 				</g:eachError>
 			</ul>
 			</g:hasErrors>
-			<g:formRemote name="cygnusauthoritiesEditForm" update="pageContent" url="[controller:'authorities', action:'save']" method="post" >
+			<g:formRemote name="cygnusauthoritiesEditForm" update="pageContent" url="[controller:'authorities', action:'update']" method="post" >
 				<g:hiddenField name="id" value="${authoritiesInstance?.id}" />
 				<g:hiddenField name="version" value="${authoritiesInstance?.version}" />
 				<fieldset class="form">
